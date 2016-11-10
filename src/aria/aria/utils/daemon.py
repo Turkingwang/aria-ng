@@ -60,11 +60,11 @@ try:
             puts(colored.blue('Not running'))
 
 except ImportError:
-    def start_daemon(pidfile_path, log_path, acquire_timeout=5):
+    def start_daemon(*args, **kwargs):
         puts(colored.red('Cannot start daemon in this environment'))
 
-    def stop_daemon(pidfile_path, acquire_timeout=5):
+    def stop_daemon(*args, **kwargs):
         puts(colored.red('Not running'))
 
-    def status_daemon(pidfile_path, acquire_timeout=5):
+    def status_daemon(*args, **kwargs):
         puts(colored.blue('Not running'))

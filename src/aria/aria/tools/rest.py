@@ -47,8 +47,6 @@ INDIRECT_INSTANCE_PATH = 'indirect/instance'
 
 DEFAULT_PORT = 8080
 
-arguments = None
-
 #
 # Utils
 #
@@ -69,7 +67,7 @@ def parse_path(handler):
 def parse_indirect_payload(handler):
     try:
         payload = handler.json_payload
-    except:
+    except BaseException:
         handler.send_plain_text_response(400, 'Payload is not JSON\n')
         return None, None
 
@@ -80,7 +78,7 @@ def parse_indirect_payload(handler):
 
     try:
         uri = payload['uri']
-    except:
+    except BaseException:
         handler.send_plain_text_response(400, 'Payload does not have required "uri" field\n')
         return None, None
 

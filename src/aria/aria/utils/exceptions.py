@@ -16,9 +16,9 @@
 import sys
 import linecache
 
+from clint.textui import indent
 from .console import (puts,
                       colored)
-from ..consumption.style import indent
 
 
 def print_exception(e, full=True, cause=False, traceback=None):
